@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Use minimum-scale=1 to enable GPU rasterization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+    <meta name="Description" content="Interactive map of Vintage Civ">
+    <title>Vintage Civ Map: An Interactive Map of Vintage Civ</title>
+    <meta property="og:type" content="object" />
+    <meta property="og:url" content="https://vcmap.github.io/" />
+    <meta property="og:site_name" content="VCMap" />
+    <meta property="og:title" content="VCMap" />
+    <meta property="og:description" content="Interactive map of Vintage Civ" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/931291079939096596/943983243038961724/twitch.png" />
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/931291079939096596/943983243038961724/twitch.png" />
+</head>
+
+<body>
+    <div id="app-root">
+        Loading...
+    </div>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="https://ccmap.github.io/style.css" />
+    <script src="https://ccmap.github.io/js/bundle.js"></script>
+    <script type="text/javascript">
+        var config = {
+            defaultCollectionUrls: [
+                { source: "https://vcmap.github.io/data/land_claims.civmap.json", enabled_presentation: false },
+                { source: "https://vcmap.github.io/data/settlements.json", enabled_presentation: false },
+            ],
+            initialState: {
+                mapConfig: {
+                    borderApothem: 25000,
+                    tilesRoot: 'https://raw.githubusercontent.com/vcmap/tiles/master/',
+                    basemaps: {
+                        terrain: { name: 'Terrain', id: 'terrain', bgColor: '#000', isDefault: true },
+                    },
+                }
+            }
+        }
+        window.civMapApi = CivMap.start(config)
+    </script>
+</body>
+
+</html>
